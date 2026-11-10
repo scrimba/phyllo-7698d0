@@ -1,0 +1,689 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect : InsightIQ</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,italic,600,700,700italic"><style>html { line-height: 1.15; text-size-adjust: 100%; }
+body { display: flex; flex-direction: column; height: 100vh; word-break: break-word; }
+main { display: block; }
+.h1, h1 { font-size: 2em; margin: 0.67em 0px; }
+a { background-color: transparent; }
+code, kbd, samp { font-family: monospace, monospace; font-size: 1em; }
+img { border-style: none; max-width: 100%; }
+button, input, optgroup, select, textarea { font-size: 100%; line-height: 1.15; }
+button, input { overflow: visible; }
+:root { --bs-blue: #0d6efd; --bs-indigo: #6610f2; --bs-purple: #6f42c1; --bs-pink: #d63384; --bs-red: #dc3545; --bs-orange: #fd7e14; --bs-yellow: #ffc107; --bs-green: #198754; --bs-teal: #20c997; --bs-cyan: #0dcaf0; --bs-white: #fff; --bs-gray: #6c757d; --bs-gray-dark: #343a40; --bs-gray-100: #f8f9fa; --bs-gray-200: #e9ecef; --bs-gray-300: #dee2e6; --bs-gray-400: #ced4da; --bs-gray-500: #adb5bd; --bs-gray-600: #6c757d; --bs-gray-700: #495057; --bs-gray-800: #343a40; --bs-gray-900: #212529; --bs-primary: #12344d; --bs-secondary: #264966; --bs-success: #00795b; --bs-light: #fff; --bs-grey: #f5f7f9; --bs-grey-1: #cfd7df; --bs-danger: #f65050; --bs-info: #bbdcfe; --bs-warning: #ffc107; --bs-primary-rgb: 18,52,77; --bs-secondary-rgb: 38,73,102; --bs-success-rgb: 0,121,91; --bs-light-rgb: 255,255,255; --bs-grey-rgb: 245,247,249; --bs-grey-1-rgb: 207,215,223; --bs-danger-rgb: 246,80,80; --bs-info-rgb: 187,220,254; --bs-warning-rgb: 255,193,7; --bs-white-rgb: 255,255,255; --bs-black-rgb: 0,0,0; --bs-body-color-rgb: 38,73,102; --bs-body-bg-rgb: 245,247,249; --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; --bs-gradient: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0)); --bs-body-font-family: var(--fw-baseFont); --bs-body-font-size: 1rem; --bs-body-font-weight: 400; --bs-body-line-height: 1.5; --bs-body-color: #264966; --bs-body-bg: #f5f7f9; }
+*, ::after, ::before { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference){:root { scroll-behavior: smooth; }
+}
+body { margin: 0px; font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); line-height: var(--bs-body-line-height); color: var(--bs-body-color); text-align: var(--bs-body-text-align); background-color: var(--bs-body-bg); text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 0.25rem; font-weight: 500; line-height: 1.2; }
+.h1, h1 { font-size: calc(1.375rem + 1.5vw); }
+@media (min-width: 1200px){.h1, h1 { font-size: 2.5rem; }
+}
+.h2, h2 { font-size: calc(1.325rem + 0.9vw); }
+@media (min-width: 1200px){.h2, h2 { font-size: 2rem; }
+}
+.h3, h3 { font-size: calc(1.3rem + 0.6vw); }
+@media (min-width: 1200px){.h3, h3 { font-size: 1.75rem; }
+}
+p { margin-top: 0px; margin-bottom: 0px; }
+ol, ul { padding-left: 2rem; }
+dl, ol, ul { margin-top: 0px; margin-bottom: 1rem; }
+ol ol, ol ul, ul ol, ul ul { margin-bottom: 0px; }
+b, strong { font-weight: bolder; }
+a { color: var(--fw-linkColor); }
+a, a:hover { text-decoration: none; }
+a:hover { color: var(--fw-linkColorHover); }
+code, kbd, pre, samp { font-family: var(--bs-font-monospace); font-size: 1em; direction: ltr; unicode-bidi: bidi-override; }
+code { font-size: 87.5%; color: rgb(214, 51, 132); overflow-wrap: break-word; }
+img, svg { vertical-align: middle; }
+button { border-radius: 0px; }
+button:focus:not(:focus-visible) { outline: 0px; }
+button, input, optgroup, select, textarea { margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; }
+button, select { text-transform: none; }
+[type="button"], [type="reset"], [type="submit"], button { appearance: button; }
+::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-fields-wrapper, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-text, ::-webkit-datetime-edit-year-field { padding: 0px; }
+::-webkit-inner-spin-button { height: auto; }
+::-webkit-search-decoration { appearance: none; }
+::-webkit-color-swatch-wrapper { padding: 0px; }
+::-webkit-file-upload-button { font: inherit; appearance: button; }
+.list-inline, .list-unstyled { padding-left: 0px; list-style: none; }
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { width: 100%; padding-right: var(--bs-gutter-x, 0.75rem); padding-left: var(--bs-gutter-x, 0.75rem); margin-right: auto; margin-left: auto; }
+@media (min-width: 576px){.container, .container-sm { max-width: 540px; }
+}
+@media (min-width: 768px){.container, .container-md, .container-sm { max-width: 720px; }
+}
+@media (min-width: 992px){.container, .container-lg, .container-md, .container-sm { max-width: 960px; }
+}
+@media (min-width: 1200px){.container, .container-lg, .container-md, .container-sm, .container-xl { max-width: 1140px; }
+}
+@media (min-width: 1400px){.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { max-width: 1320px; }
+}
+.row { --bs-gutter-x: 1.5rem; --bs-gutter-y: 0; display: flex; flex-wrap: wrap; margin-top: calc(var(--bs-gutter-y)*-1); margin-right: calc(var(--bs-gutter-x)*-0.5); margin-left: calc(var(--bs-gutter-x)*-0.5); }
+.row > * { flex-shrink: 0; width: 100%; max-width: 100%; padding-right: calc(var(--bs-gutter-x)*0.5); padding-left: calc(var(--bs-gutter-x)*0.5); margin-top: var(--bs-gutter-y); }
+.g-0, .gx-0 { --bs-gutter-x: 0; }
+.g-0, .gy-0 { --bs-gutter-y: 0; }
+@media (min-width: 768px){.col-md-4 { flex: 0 0 auto; width: 33.3333%; }
+.col-md-5 { flex: 0 0 auto; width: 41.6667%; }
+.col-md-6 { flex: 0 0 auto; width: 50%; }
+}
+@media (min-width: 992px){.col-lg-3 { flex: 0 0 auto; width: 25%; }
+.col-lg-9 { flex: 0 0 auto; width: 75%; }
+}
+.form-control { display: block; width: 100%; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 400; line-height: 1.25; color: rgb(18, 52, 77); background-color: rgb(255, 255, 255); background-clip: padding-box; border: 1px solid rgb(177, 189, 200); appearance: none; border-radius: 0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+@media (prefers-reduced-motion: reduce){.form-control { transition: none; }
+}
+.form-control:focus { color: rgb(18, 52, 77); background-color: rgb(255, 255, 255); border-color: var(--fw-formInputFocusColor); outline: 0px; box-shadow: 0 0 0 2px var(--fw-formInputFocusColor); }
+.form-control::-webkit-date-and-time-value { height: 1.25em; }
+.form-control::placeholder { color: rgb(108, 117, 125); opacity: 1; }
+.form-control:disabled, .form-control[readonly] { background-color: rgb(233, 236, 239); opacity: 1; }
+.form-control::-webkit-file-upload-button { padding: 0.75rem 1rem; margin: -0.75rem -1rem; margin-inline-end: 1rem; color: rgb(18, 52, 77); background-color: rgb(233, 236, 239); pointer-events: none; border-width: 0px; border-style: solid; border-image: none; border-color: inherit; border-inline-end-width: 1px; border-radius: 0px; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+@media (prefers-reduced-motion: reduce){.form-control::-webkit-file-upload-button { transition: none; }
+}
+.input-group { position: relative; display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; }
+.input-group > .form-control, .input-group > .form-select { position: relative; flex: 1 1 auto; width: 1%; min-width: 0px; }
+.input-group > .form-control:focus, .input-group > .form-select:focus { z-index: 3; }
+.input-group .btn, .input-group .btn-quoted { position: relative; z-index: 2; }
+.input-group .btn-quoted:focus, .input-group .btn:focus { z-index: 3; }
+.input-group-text { display: flex; align-items: center; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 400; line-height: 1.25; color: rgb(18, 52, 77); text-align: center; white-space: nowrap; background-color: rgb(233, 236, 239); border: 1px solid rgb(177, 189, 200); border-radius: 0.25rem; }
+.input-group.has-validation > .cc-dropdown-toggle:nth-last-child(n+4), .input-group.has-validation > .dropdown-toggle:nth-last-child(n+4), .input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.cc-dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation) > .cc-dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.cc-dropdown-toggle):not(.dropdown-menu) { border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) { margin-left: -1px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
+.btn, .btn-quoted { display: inline-block; font-weight: 400; line-height: 1.25; color: rgb(38, 73, 102); text-align: center; vertical-align: middle; cursor: pointer; user-select: none; background-color: transparent; border: 1px solid transparent; padding: 0.75rem; font-size: 1rem; border-radius: 0.25rem; transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+@media (prefers-reduced-motion: reduce){.btn, .btn-quoted { transition: none; }
+}
+.btn-quoted:hover, .btn:hover { color: rgb(38, 73, 102); }
+.btn-check:focus + .btn, .btn-check:focus + .btn-quoted, .btn-quoted:focus, .btn:focus { outline: 0px; box-shadow: 0 0 0 2px var(--fw-formInputFocusColor); }
+.btn-quoted:disabled, .btn.disabled, .btn:disabled, .disabled.btn-quoted, fieldset:disabled .btn, fieldset:disabled .btn-quoted { pointer-events: none; opacity: 0.65; }
+.collapse:not(.show) { display: none; }
+.dropdown, .dropend, .dropstart, .dropup { position: relative; }
+.cc-dropdown-toggle, .dropdown-toggle { white-space: nowrap; }
+.cc-dropdown-toggle::after, .dropdown-toggle::after { display: inline-block; margin-left: 0.255em; vertical-align: middle; content: ""; border-width: 0.3em 0.3em 0px; border-style: solid solid none; border-color: currentcolor transparent; }
+.dropdown-menu { position: absolute; z-index: 1000; display: none; min-width: 13.75rem; padding: 0px; margin: 0px; font-size: 1rem; color: rgb(38, 73, 102); text-align: left; list-style: none; background-color: rgb(255, 255, 255); background-clip: padding-box; border: 1px solid rgb(235, 239, 243); border-radius: 0.25rem; }
+.nav-link { display: block; padding: 0.75rem 0px; font-size: 1rem; font-weight: 400; color: var(--fw-linkColor); transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; }
+@media (prefers-reduced-motion: reduce){.nav-link { transition: none; }
+}
+.nav-link:focus, .nav-link:hover { color: var(--fw-linkColorHover); }
+.navbar { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding-top: 0px; padding-bottom: 0px; }
+.navbar-brand { padding-top: 0px; padding-bottom: 0px; margin-right: 1rem; font-size: 1rem; white-space: nowrap; }
+.navbar-nav { display: flex; flex-direction: column; padding-left: 0px; margin-bottom: 0px; list-style: none; }
+.navbar-nav .nav-link { padding-right: 0px; padding-left: 0px; }
+.navbar-collapse { flex-basis: 100%; flex-grow: 1; align-items: center; }
+.navbar-toggler { padding: 0.25rem 0.75rem; font-size: 1rem; line-height: 1; background-color: transparent; border: 1px solid transparent; border-radius: 0px; transition: box-shadow 0.15s ease-in-out; }
+@media (prefers-reduced-motion: reduce){.navbar-toggler { transition: none; }
+}
+.navbar-toggler:hover { text-decoration: none; }
+.navbar-toggler:focus { text-decoration: none; outline: 0px; box-shadow: 0px 0px 0px 0px; }
+@media (min-width: 1200px){.navbar-expand-xl { flex-wrap: nowrap; justify-content: flex-start; }
+.navbar-expand-xl .navbar-nav { flex-direction: row; }
+.navbar-expand-xl .navbar-nav .nav-link { padding-right: 0.875rem; padding-left: 0.875rem; }
+.navbar-expand-xl .navbar-collapse { flex-basis: auto; display: flex !important; }
+.navbar-expand-xl .navbar-toggler, .navbar-expand-xl .offcanvas-header { display: none; }
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.disabled, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .show > .nav-link { color: rgb(18, 52, 77); }
+.navbar-light .navbar-toggler { color: rgb(18, 52, 77); border-color: transparent; }
+.breadcrumb { display: flex; flex-wrap: wrap; padding: 0px; margin-bottom: 0px; font-size: 1rem; list-style: none; background-color: transparent; }
+.breadcrumb-item + .breadcrumb-item { padding-left: 0.25rem; }
+.breadcrumb-item + .breadcrumb-item::before { float: left; padding-right: 0.25rem; color: var(--fw-breadcrumb-color); content: var(--bs-breadcrumb-divider, ""); }
+.alert { position: relative; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid transparent; border-radius: 0.25rem; }
+@keyframes progress-bar-stripes { 
+  0% { background-position-x: 1rem; }
+}
+@keyframes spinner-border { 
+  100% { transform: rotate(1turn); }
+}
+@keyframes spinner-grow { 
+  0% { transform: scale(0); }
+  50% { opacity: 1; transform: none; }
+}
+@keyframes placeholder-glow { 
+  50% { opacity: 0.2; }
+}
+@keyframes placeholder-wave { 
+  100% { mask-position: -200% 0px; }
+}
+.fixed-top { top: 0px; }
+.fixed-bottom, .fixed-top { position: fixed; right: 0px; left: 0px; z-index: 1030; }
+.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0px !important; margin: -1px !important; overflow: hidden !important; clip: rect(0px, 0px, 0px, 0px) !important; white-space: nowrap !important; border: 0px !important; }
+.align-top { vertical-align: top !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex, .fw-helpdesk-ticket-forms-dropdown-container .form-group:not([hidden]) { display: flex !important; }
+.flex-row { flex-direction: row !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+.mx-0 { margin-right: 0px !important; margin-left: 0px !important; }
+.my-0 { margin-top: 0px !important; margin-bottom: 0px !important; }
+.mt-64 { margin-top: 4rem !important; }
+.me-4 { margin-right: 0.25rem !important; }
+.fw-helpdesk-ticket-forms-dropdown-container .form-group, .mb-0 { margin-bottom: 0px !important; }
+.mb-8 { margin-bottom: 0.5rem !important; }
+.mb-12 { margin-bottom: 0.75rem !important; }
+.mb-16 { margin-bottom: 1rem !important; }
+.mb-20 { margin-bottom: 1.25rem !important; }
+.ms-4 { margin-left: 0.25rem !important; }
+.ms-auto { margin-left: auto !important; }
+.px-0 { padding-right: 0px !important; padding-left: 0px !important; }
+.px-20 { padding-right: 1.25rem !important; padding-left: 1.25rem !important; }
+.py-8 { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+.py-24 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+.pt-32 { padding-top: 2rem !important; }
+.pe-8 { padding-right: 0.5rem !important; }
+.pb-60 { padding-bottom: 3.75rem !important; }
+.ps-8 { padding-left: 0.5rem !important; }
+.fs-22 { font-size: calc(1.2625rem + 0.15vw) !important; }
+.text-start { text-align: left !important; }
+.text-center { text-align: center !important; }
+.bg-light { --bs-bg-opacity: 1; background-color: var(--bs-light) !important; }
+.bg-grey { --bs-bg-opacity: 1; background-color: var(--bs-grey) !important; }
+@media (min-width: 768px){.d-md-none { display: none !important; }
+.mb-md-0 { margin-bottom: 0px !important; }
+.text-md-end { text-align: right !important; }
+}
+@media (min-width: 992px){.d-lg-none { display: none !important; }
+.mb-lg-0 { margin-bottom: 0px !important; }
+.py-lg-60 { padding-top: 3.75rem !important; padding-bottom: 3.75rem !important; }
+.text-lg-start { text-align: left !important; }
+}
+@media (min-width: 1200px){.mt-xl-0 { margin-top: 0px !important; }
+.pt-xl-4 { padding-top: 0.25rem !important; }
+.pb-xl-0 { padding-bottom: 0px !important; }
+}
+@media (min-width: 1200px){.fs-22 { font-size: 1.375rem !important; }
+}
+.fs-20 { font-size: 1.25rem !important; }
+.fs-22 { font-size: 1.375rem !important; }
+.hide { display: none; }
+@font-face { font-family: icomoon; src: url("https://ind-assets1.freshdesk.com/assets/cdn/portal/styles/fonts/icomoon-892addc5f4239a1b6a6f566f678fa18b45f99eb42690a99d74514becbdab5648.ttf?26bzwh") format("truetype"), url("https://ind-assets5.freshdesk.com/assets/cdn/portal/styles/fonts/icomoon-3e2d270b67bbc5673f65003280f4c63c95253c043ff3565cfad98f9328c6f524.woff?26bzwh") format("woff"); font-weight: 400; font-style: normal; font-display: block; }
+[class*=" icon-"], [class^="icon-"] { font-style: normal; font-weight: 400; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; font-family: icomoon !important; }
+.icon-strongly-disagree::before { content: ""; color: rgb(215, 45, 48); }
+.icon-strongly-agree::before { content: ""; color: rgb(0, 121, 91); }
+.icon-search::before { content: ""; color: rgb(177, 189, 200); }
+.btn-search .search-input-icon::before { color: rgb(43, 54, 64); }
+.icon-print::before { content: ""; color: var(--fw-textColor); }
+.icon-home::before { content: ""; color: var(--fw-textColor); }
+.icon-solutions::before { content: ""; color: var(--fw-textColor); }
+.icon-article::before { content: ""; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { color: var(--fw-textColor); font-family: var(--fw-headingsFont); }
+.h1, .h2, h1, h2 { font-weight: 700; }
+.h3, .h4, .h5, h3, h4, h5 { font-weight: 600; }
+.h1, .h2, h1, h2 { font-size: 1.5rem; }
+.h3, .h4, h3, h4 { font-size: 1.25rem; }
+.fw-helpdesk-ticket-forms-dropdown-container .form-group .form-select, .semi-bold { font-weight: 600; }
+@media (min-width: 992px){.h1, h1 { font-size: 2.625rem; }
+}
+.form-group { margin-bottom: 1rem; }
+ul { margin: 0px; padding: 0px 0px 0px 1.125rem; }
+ul.fw-no-bullet { margin: 0px; padding: 0px; list-style-type: none; }
+.btn-quoted:focus, .btn-quoted:focus-visible, .btn:focus, .btn:focus-visible { border-color: rgb(255, 255, 255); }
+.fw-btn-feedback { border: 1px solid rgb(235, 239, 243); background-color: rgb(255, 255, 255); padding: 0.5rem 1.25rem; font-weight: 600; font-size: 1.125rem; margin-right: 0.5rem; display: inline-flex; align-items: center; }
+.fw-btn-feedback [class^="icon-"] { padding-right: 4px; }
+.fw-btn-feedback:hover { background-color: rgb(235, 239, 243); }
+.fw-btn-feedback.fw-no { color: rgb(200, 33, 36); }
+.fw-btn-feedback.fw-yes { color: rgb(0, 92, 63); }
+.form-control:focus, .form-control:focus-visible, .form-select:focus, .form-select:focus-visible { border-color: rgb(177, 189, 200); outline: 0px; box-shadow: 0 0 0 2px #fff,0 0 0 4px var(--fw-formInputFocusColor); transition: none; }
+.fw-search { position: relative; margin-top: 1rem; }
+.fw-search input { height: 2.75rem; padding: 0px 1rem; border-radius: 0.5rem; font-size: 1rem; }
+.fw-search button { border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; height: 2.75rem; }
+.fw-search button, .fw-search button:hover { background-color: rgb(235, 239, 243); border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(177, 189, 200) rgb(177, 189, 200) rgb(177, 189, 200) currentcolor; border-image: none; }
+@media (min-width: 992px){.fw-search input { height: 3.75rem; padding: 0px 1rem; font-size: 1.25rem; box-shadow: unset; }
+.fw-search button { height: 3.75rem; }
+.fw-search::before { top: 1rem; left: 1rem; font-size: 1.25rem; }
+}
+.fw-article { position: relative; padding-left: 1.5rem; font-size: 0.875rem; display: block; }
+.fw-article::before { left: 0px; position: absolute; font-family: icomoon; content: ""; font-size: 1rem; }
+body { background-color: var(--fw-body-bg); }
+body .fw-primary-button, body .fw-primary-button:hover { background-color: var(--fw-btn-primary-background); color: var(--fw-btn-primary-text-color); border-color: rgb(207, 215, 223); }
+body .fw-secondary-button, body .fw-secondary-button:hover { background-color: var(--fw-btn-background); color: var(--fw-btn-text-color); border-color: rgb(207, 215, 223); }
+body .fw-meta-info { color: var(--fw-textColor); }
+body .dropdown-divider { border-top: 1px solid var(--fw-inputFocusRingColor); }
+body hr { color: var(--fw-inputFocusRingColor); }
+.fw-nav-wrapper { background-color: var(--fw-header-bg); border-bottom: 1px solid var(--fw-inputFocusRingColor); }
+.fw-nav-wrapper .bg-light .container .show-on-focus { position: absolute; left: 0px; top: 50%; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap; border: 0px; background-color: transparent; color: transparent; outline: none; transform: translateY(-50%); }
+.fw-nav-wrapper .bg-light .container .show-on-focus:focus { outline: none; }
+.fw-nav-wrapper .bg-light .container .show-on-focus:focus:not(:focus-visible) { width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); border: 0px; background-color: transparent; color: transparent; }
+.navbar .navbar-brand { max-width: 83%; color: var(--fw-header-text-color); }
+.navbar .fw-brand-logo { max-width: 10rem; height: 3rem; }
+.navbar .fw-brand-name { max-width: 13rem; line-height: 1.2; text-overflow: ellipsis; overflow: hidden; }
+.navbar .navbar-collapse { position: fixed; top: 0px; right: 0px; width: 16rem; height: 100%; z-index: 100; background-color: rgb(255, 255, 255); }
+.navbar .navbar-collapse ul { padding: 1rem 0.75rem; }
+.navbar .navbar-collapse ul.fw-nav-dropdown-wrapper { width: 100%; position: absolute; top: 0px; padding-top: 0.75rem; padding-bottom: 0.75rem; background-color: var(--fw-header-bg); }
+.navbar .navbar-collapse ul.fw-nav-dropdown-wrapper .nav-item { margin-bottom: 0px; }
+.navbar .navbar-collapse ul.fw-nav-dropdown-wrapper .nav-link { padding-left: 0px; padding-right: 0px; color: var(--fw-header-text-color); }
+.navbar .navbar-collapse.home_nav_accessibility_lp .nav-item.active .nav-link { outline: none; }
+.navbar .navbar-collapse.home_nav_accessibility_lp .nav-item .nav-link:focus { box-shadow: rgb(46, 110, 216) 0px 0px 0px 2px; border: 1px solid rgb(255, 255, 255); }
+.navbar .navbar-collapse .nav-item { margin-bottom: 1rem; }
+.navbar .navbar-collapse .nav-item.active { background-color: var(--fw-tab-active-color); border-radius: var(--fw-tab-active-color); }
+.navbar .navbar-collapse .nav-item.active .nav-link, .navbar .navbar-collapse .nav-item.active .nav-link [class*=" icon-"]::before, .navbar .navbar-collapse .nav-item.active .nav-link [class^="icon-"]::before { color: var(--fw-tab-active-text-color); }
+.navbar .navbar-collapse .nav-item .nav-link { padding-left: 1rem; line-height: 1; position: relative; display: flex; align-items: center; white-space: nowrap; }
+.navbar .navbar-collapse .nav-item .nav-link [class*=" icon-"], .navbar .navbar-collapse .nav-item .nav-link [class^="icon-"] { font-size: 1.25rem; margin-right: 0.5rem; }
+.navbar .navbar-collapse .nav-item .btn, .navbar .navbar-collapse .nav-item .btn-quoted { width: 100%; white-space: nowrap; }
+.navbar .navbar-collapse .nav-item.fw-signup .nav-link { border-left-width: medium; border-left-style: none; border-left-color: currentcolor; position: relative; margin-right: 1rem; }
+.navbar .navbar-collapse .nav-item.fw-signup .nav-link::after { border-left: 1px solid var(--fw-header-text-color); content: " "; position: absolute; left: 0px; height: 1.5rem; top: 50%; transform: translateY(-50%); }
+.navbar .navbar-toggler { border: 0px; padding: 0.5rem; width: 2.5em; border-bottom-left-radius: 0.25rem; }
+.navbar .navbar-toggler .icon-bar { display: block; float: right; width: 80%; height: 0.25rem; background-color: var(--fw-header-text-color); transform: rotate(0deg) translate(0px); transition: 0.2s; border-radius: 0.25rem; }
+.navbar .navbar-toggler .icon-bar + .icon-bar { margin-top: 0.25rem; }
+.navbar .navbar-toggler .icon-bar + .icon-bar:nth-child(2) { width: 100%; }
+.navbar .dropdown { position: relative; }
+.fw-main-wrapper { margin-top: 4rem; }
+@media (min-width: 375px){.navbar .navbar-brand { max-width: 85%; }
+.navbar .fw-brand-name { max-width: 16rem; }
+}
+@media (min-width: 768px){.navbar .navbar-brand { max-width: 90%; }
+.navbar .fw-brand-logo { max-width: 15rem; }
+.navbar .fw-brand-name { max-width: 35rem; }
+}
+@media (min-width: 992px){.navbar .fw-brand-name { max-width: 45rem; }
+}
+@media (min-width: 1200px){.navbar { padding-top: 0.25rem; }
+.navbar .fw-brand-name { max-width: 25rem; }
+.navbar .navbar-brand { max-width: 40%; }
+.navbar .navbar-collapse { position: unset; padding: 0px; background-color: var(--fw-header-bg); }
+.navbar .navbar-collapse ul { padding-bottom: 0px; padding-top: 0px; padding-right: 0px; }
+.navbar .navbar-collapse ul.fw-nav-dropdown-wrapper { position: unset; padding: 0px; width: auto; }
+.navbar .navbar-collapse .nav-item { margin-bottom: 0px; margin-right: 0.5rem; height: 4.25rem; line-height: 4.25rem; }
+.navbar .navbar-collapse .nav-item:not(.no-hover).active, .navbar .navbar-collapse .nav-item:not(.no-hover):focus { border-radius: 0.25rem 0.25rem 0px 0px; background-color: var(--fw-tab-active-color); }
+.navbar .navbar-collapse .nav-item:not(.no-hover).active .nav-link, .navbar .navbar-collapse .nav-item:not(.no-hover):focus .nav-link { color: var(--fw-tab-active-text-color); }
+.navbar .navbar-collapse .nav-item:not(.no-hover):not(.active):hover { border-radius: 0.25rem 0.25rem 0px 0px; background-color: var(--fw-tab-hover-color); }
+.navbar .navbar-collapse .nav-item:not(.no-hover):not(.active):hover .nav-link { color: var(--fw-tab-hover-text-color); }
+.navbar .navbar-collapse .nav-item .nav-link { line-height: 4.25rem; padding-top: 0px; padding-bottom: 0px; color: var(--fw-header-text-color); }
+.navbar .navbar-collapse .nav-item .nav-link [class*=" icon-"], .navbar .navbar-collapse .nav-item .nav-link [class^="icon-"] { font-size: 1.75rem; color: var(--fw-header-text-color); }
+.navbar .navbar-collapse .nav-item.fw-login, .navbar .navbar-collapse .nav-item.fw-login .nav-link { margin-right: 0px; }
+.navbar .navbar-collapse .nav-item.fw-login .nav-link::after { right: 0px; }
+}
+.fw-search input:focus + button { box-shadow: 0 0 0 2px var(--fw-inputFocusRingColor); border-color: transparent; }
+.fw-searchbar-wrapper { background-color: var(--fw-helpcenter-bg); color: var(--fw-helpcenter-text-color); }
+.fw-searchbar-wrapper.fw-sticky { position: sticky; z-index: 12; top: 64px; }
+.fw-searchbar-wrapper .fw-search input { height: 2.75rem; padding: 0px 1rem; font-size: 1rem; }
+.fw-searchbar-wrapper .fw-search input:focus + button { box-shadow: 0 0 0 2px var(--fw-inputFocusRingColor); border-color: transparent; }
+.fw-searchbar-wrapper .fw-search button { height: 2.75rem; }
+.fw-searchbar-wrapper .breadcrumb a { color: var(--fw-helpcenter-text-color); text-decoration: underline; }
+.fw-searchbar-wrapper .breadcrumb .dropdown-menu { max-width: 17rem; }
+.fw-searchbar-wrapper .breadcrumb .dropdown-menu a { text-decoration: none; width: 100%; text-overflow: ellipsis; overflow: hidden; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item { max-width: 8rem; display: inline-block; padding-right: 0.5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item:first-child::before { display: none; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item::before { font-family: icomoon; content: ""; color: var(--fw-helpcenter-text-color); font-size: 0.5rem; transform: rotate(270deg); padding: 0px 6px 0px 10px; line-height: 0; width: 0px; height: 0.75rem; margin-top: 1rem; opacity: 0.5; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item .cc-dropdown-toggle, .fw-searchbar-wrapper .breadcrumb .breadcrumb-item .dropdown-toggle { color: var(--fw-helpcenter-text-color); line-height: 1rem; padding: 0px 0.5rem; border-radius: 0.75rem; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item .cc-dropdown-toggle:hover, .fw-searchbar-wrapper .breadcrumb .breadcrumb-item .dropdown-toggle:hover { background-color: rgb(38, 73, 102); }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item .cc-dropdown-toggle::after, .fw-searchbar-wrapper .breadcrumb .breadcrumb-item .dropdown-toggle::after { display: none; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item .dropdown-menu { width: auto; min-width: auto; top: 0.25rem; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item.fw-more-items a { text-decoration: none; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item.fw-more-items a:not(.dropdown-toggle):not(.cc-dropdown-toggle) { display: block; color: rgb(18, 52, 77); padding: 0.5rem 1rem; }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-item.fw-more-items a:not(.dropdown-toggle):not(.cc-dropdown-toggle):hover { background-color: rgb(235, 239, 243); }
+.fw-searchbar-wrapper .breadcrumb .breadcrumb-active-item { max-width: 11rem; }
+.fw-page-title-wrapper { background-color: var(--fw-helpcenter-bg); }
+.fw-page-title-wrapper p { color: var(--fw-helpcenter-text-color); opacity: 0.7; }
+.fw-page-title-wrapper .fw-search-meta-info { display: flex; }
+.fw-page-title-wrapper .fw-search-meta-info .h1, .fw-page-title-wrapper .fw-search-meta-info h1 { color: var(--fw-helpcenter-text-color); }
+.fw-page-title-wrapper .fw-search-meta-info .fw-icon-holder { font-size: 1.5rem; margin-right: 1rem; float: left; padding-top: 0.25rem; }
+.fw-page-title-wrapper .fw-search-meta-info [class*=" icon-"]::before, .fw-page-title-wrapper .fw-search-meta-info [class^="icon-"]::before { color: var(--fw-helpcenter-text-color); }
+@media (min-width: 768px){.fw-page-title-wrapper .fw-icon-holder { font-size: 2rem; }
+.fw-page-title-wrapper .fw-search-meta-info .fw-icon-holder { font-size: 2rem; padding-top: 0.5rem; }
+.breadcrumb .dropdown-menu { max-width: 18rem; }
+.breadcrumb .breadcrumb-active-item { max-width: 13rem; }
+}
+@media (min-width: 992px){.fw-searchbar-wrapper.fw-sticky { top: 64px; }
+.fw-searchbar-wrapper .breadcrumb .dropdown-menu { max-width: 25rem; }
+}
+@media (min-width: 1200px){.fw-searchbar-wrapper.fw-sticky { top: 72px; }
+.fw-page-title-wrapper .fw-icon-holder { font-size: 3.5rem; }
+}
+.fw-sidebar { padding: 1.5rem; min-height: 100%; border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
+.fw-sidebar .print a, .fw-sidebar .print a span::before { color: var(--fw-textColor); }
+.fw-sidebar a { color: rgb(18, 52, 77); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fw-sidebar li { margin-bottom: 0.75rem; }
+.fw-sidebar li .fw-article { color: var(--fw-linkColor); }
+.fw-sidebar li .fw-article::before { color: rgb(38, 73, 102); }
+.fw-sidebar li .fw-article:hover { color: var(--fw-linkColorHover); }
+.fw-wrapper-shadow .fw-content-wrapper, .fw-wrapper-shadow .fw-sidebar-wrapper { box-shadow: rgba(39, 49, 58, 0.1) 0px 6px 19px; border: 1px solid rgb(235, 239, 243); border-radius: 0.75rem; }
+.fw-wrapper-shadow .fw-content { margin: 1.5rem 1rem; }
+.fw-wrapper-shadow .fw-content--single-article { text-align: initial; font-size: 13px; }
+.fw-wrapper-shadow .fw-content--single-article div, .fw-wrapper-shadow .fw-content--single-article li, .fw-wrapper-shadow .fw-content--single-article p { font-size: 13px; line-height: 1.4; margin: 0px; }
+.fw-wrapper-shadow .fw-content--single-article code, .fw-wrapper-shadow .fw-content--single-article div, .fw-wrapper-shadow .fw-content--single-article li, .fw-wrapper-shadow .fw-content--single-article p, .fw-wrapper-shadow .fw-content--single-article pre { word-break: normal; overflow-wrap: break-word; }
+.fw-wrapper-shadow .fw-content--single-article .h3, .fw-wrapper-shadow .fw-content--single-article h3 { font-size: 1.17em; }
+.fw-wrapper-shadow .fw-content--single-article .h1, .fw-wrapper-shadow .fw-content--single-article .h2, .fw-wrapper-shadow .fw-content--single-article .h3, .fw-wrapper-shadow .fw-content--single-article .h4, .fw-wrapper-shadow .fw-content--single-article .h5, .fw-wrapper-shadow .fw-content--single-article .h6, .fw-wrapper-shadow .fw-content--single-article h1, .fw-wrapper-shadow .fw-content--single-article h2, .fw-wrapper-shadow .fw-content--single-article h3, .fw-wrapper-shadow .fw-content--single-article h4, .fw-wrapper-shadow .fw-content--single-article h5, .fw-wrapper-shadow .fw-content--single-article h6 { line-height: 165%; font-weight: 400; }
+.fw-wrapper-shadow .fw-content--single-article em { font-style: italic; }
+.fw-wrapper-shadow .fw-content--single-article ol, .fw-wrapper-shadow .fw-content--single-article ul { margin: 8px 0px 4px; padding: 0px 0px 0px 40px; line-height: 17px; }
+.fw-wrapper-shadow .fw-content--single-article ul { list-style: disc; }
+.fw-wrapper-shadow .fw-content--single-article ol, .fw-wrapper-shadow .fw-content--single-article ul { padding-left: 2rem; }
+.fw-wrapper-shadow .fw-content--single-article a { color: rgb(24, 50, 71); }
+.fw-wrapper-shadow .fw-content--single-article a:not(.fw-attachment-item):hover { color: rgb(39, 83, 215); }
+.fw-wrapper-shadow .fw-content--single-article .h1, .fw-wrapper-shadow .fw-content--single-article .h2, .fw-wrapper-shadow .fw-content--single-article .h3, .fw-wrapper-shadow .fw-content--single-article .h4, .fw-wrapper-shadow .fw-content--single-article .h5, .fw-wrapper-shadow .fw-content--single-article .h6, .fw-wrapper-shadow .fw-content--single-article h1, .fw-wrapper-shadow .fw-content--single-article h2, .fw-wrapper-shadow .fw-content--single-article h3, .fw-wrapper-shadow .fw-content--single-article h4, .fw-wrapper-shadow .fw-content--single-article h5, .fw-wrapper-shadow .fw-content--single-article h6 { color: rgb(24, 50, 71); }
+.fw-wrapper-shadow .fw-content--single-article ol, .fw-wrapper-shadow .fw-content--single-article p, .fw-wrapper-shadow .fw-content--single-article ul { color: var(--fw-textColor); }
+.fw-wrapper-shadow .fw-feedback { border-top: 1px solid var(--fw-inputFocusRingColor); margin: 1.5rem 2rem; padding: 2rem 0px; clear: both; }
+.fw-wrapper-shadow .fw-comments-wrapper, .fw-wrapper-shadow .fw-feedback .fw-feedback-question { color: var(--fw-textColor); }
+@media (min-width: 992px){.fw-wrapper-shadow { box-shadow: rgba(39, 49, 58, 0.1) 0px 6px 19px; border: 1px solid rgb(235, 239, 243); border-radius: 0.75rem; }
+.fw-wrapper-shadow .fw-content-wrapper { box-shadow: unset; border: unset; border-radius: unset; }
+.fw-wrapper-shadow .fw-content { margin: 1.5rem 2rem; }
+.fw-wrapper-shadow .fw-sidebar-wrapper { box-shadow: unset; border: unset; border-radius: unset; }
+}
+@keyframes placeholdershimmer { 
+  0% { background-position: -1000px 0px; }
+  100% { background-position: 1000px 0px; }
+}
+@keyframes fpFadeInDown { 
+  0% { opacity: 0; transform: translate3d(0px, -20px, 0px); }
+  100% { opacity: 1; transform: translateZ(0px); }
+}
+body.fr-prevent-scroll { overflow: hidden; }
+body.fr-prevent-scroll.fr-mobile { position: fixed; }
+body.fr-fullscreen .fs-transforms-container { position: absolute; z-index: 2147483647; }
+body.fr-fullscreen { overflow: hidden; height: 100%; width: 100%; position: fixed; }
+@keyframes loading { 
+  0% { left: -25%; }
+  100% { left: 100%; }
+}
+@keyframes spin { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1turn); }
+}
+footer { margin-top: auto; text-align: center; }
+footer a { color: var(--fw-footer-text-color); padding: 0px 0.75rem; }
+footer a:hover { color: rgb(255, 255, 255); }
+footer .cookie-link { background: none; border: 0px; padding: 0px 0.75rem; color: var(--fw-footer-text-color); cursor: pointer; opacity: 0.7; text-decoration: underline; }
+footer .cookie-link:hover { color: rgb(255, 255, 255); }
+footer .copyright-text { opacity: 0.7; }
+footer .fw-credit { padding: 1rem 0px; background-color: var(--fw-footer-bg); color: var(--fw-footer-text-color); }
+footer .fw-credit a { text-decoration: underline; color: var(--fw-footer-text-color); cursor: pointer; }
+footer .fw-credit .fw-branding { border-right: 1px solid var(--fw-footer-text-color); align-items: center; display: inline-flex; color: var(--fw-footer-text-color); }
+@keyframes fw-survey-shimmer { 
+  100% { transform: translateX(100%); }
+}
+@media print{body { background-color: rgb(255, 255, 255); }
+.fc-widget-normal, .fw-agent-actionbar, .fw-breadcrumb-wrapper, .fw-feedback, .fw-nav-wrapper, .fw-rate, .fw-searchbar-wrapper, .fw-sidebar-wrapper, footer { display: none; }
+#fw-main-content { margin-top: 0px !important; }
+.fw-page-title-wrapper { background-color: rgb(255, 255, 255); }
+.fw-page-title-wrapper .fw-search-meta-info { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+.fw-page-title-wrapper .fw-search-meta-info .fw-icon-holder { display: none; }
+.fw-page-title-wrapper .fw-search-meta-info .h1, .fw-page-title-wrapper .fw-search-meta-info h1, .fw-page-title-wrapper .fw-search-meta-info p { color: rgb(18, 52, 77); }
+.fw-wrapper-shadow { border-radius: 0px; box-shadow: none !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; }
+.fw-wrapper-shadow .fw-content-wrapper { border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; }
+.fw-wrapper-shadow .fw-content { margin: 0px 1rem; }
+}
+@keyframes slide { 
+  0% { left: 5rem; }
+  100% { left: 0px; }
+}
+body.fw-nudge-overlay-active :not(.fw-nudge-allow-interaction) { pointer-events: none; }
+.portal--light { --fw-body-bg: #F5F7F9; --fw-header-bg: #F5F7F9; --fw-header-text-color: #12344D; --fw-helpcenter-bg: #12344D; --fw-helpcenter-text-color: #FFFFFF; --fw-footer-bg: #12344D; --fw-footer-text-color: #FFFFFF; --fw-tab-active-color: #12344D; --fw-tab-active-text-color: #FFFFFF; --fw-tab-hover-color: #FFFFFF; --fw-tab-hover-text-color: #12344D; --fw-btn-background: #FFFFFF; --fw-btn-text-color: #12344D; --fw-btn-primary-background: #12344D; --fw-btn-primary-text-color: #FFFFFF; --fw-baseFont: Source Sans Pro; --fw-textColor: #264966; --fw-headingsFont: Source Sans Pro; --fw-linkColor: #2C5CC5; --fw-linkColorHover: #021519; --fw-inputFocusRingColor: #EBEFF3; --fw-formInputFocusColor: #EBEFF3; --fw-card-bg: #FFFFFF; --fw-card-fg: #264966; --fw-card-border-color: #EBEFF3; --fw-nonResponsive: #F5F7F9; --bs-body-font-family: Source Sans Pro; }
+.xd-video{margin:4px 0 28px;padding:22px;border-radius:14px;background:#f3f7fb;border:1px solid #d9e4ee;font-family:"Source Sans Pro",system-ui,sans-serif}
+.xd-inline{margin:18px 0 26px}
+.xd-label{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12px;color:#264966;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.xd-dot{width:8px;height:8px;border-radius:50%;background:#2c7be5}
+.xd-title{font-weight:700;font-size:21px;line-height:1.3;color:#183247;margin:0 0 6px}
+.xd-sub{font-size:16px;line-height:1.5;color:#475867;margin:0 0 16px}
+.xd-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#0f1d2b;box-shadow:0 6px 20px rgba(24,50,71,.12)}
+.xd-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media (max-width:600px){.xd-video{padding:14px}.xd-title{font-size:18px}}</style></head><body class="portal portal--light  "><header class="container-fluid px-0 fw-nav-wrapper fixed-top">
+  <section class="bg-light container-fluid">
+    <div class="container">
+      <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000006378-connect#fw-main-content" class="show-on-focus">Skip to main content</a>
+    </div>
+  </section>
+
+  
+    <section class="container">
+      <nav aria-label="Primary" class="navbar navbar-expand-xl navbar-light px-0 py-8 pt-xl-4 pb-xl-0">
+        
+
+    <a class="navbar-brand d-flex align-items-center" href="https://insightiq.freshdesk.com/support/home">
+      <img data-src="https://s3.ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/89004586917/logo/B6rdXd87QNQ_3ZgY0d22CLHHMUpFvMA2OQ.png" alt="" class="d-inline-block align-top me-4 fw-brand-logo ls-is-cached lazyloaded" src="https://s3.ap-south-1.amazonaws.com/ind-cdn.freshdesk.com/data/helpdesk/attachments/production/89004586917/logo/B6rdXd87QNQ_3ZgY0d22CLHHMUpFvMA2OQ.png">
+      <div class="fs-22 semi-bold fw-brand-name ms-4" title="InsightIQ">InsightIQ</div>
+   </a>
+
+
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarContentToggler">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+
+        <div class="collapse navbar-collapse home_nav_accessibility_lp" id="navbarContent">
+          <ul class="navbar-nav ms-auto mt-64 mt-xl-0">
+            
+              <li class="nav-item ">
+                <a href="https://insightiq.freshdesk.com/support/home" class="nav-link">
+                  <span class="d-md-none icon-home" aria-hidden="true"></span> Home
+                </a>
+              </li>
+            
+              <li class="nav-item active">
+                <a href="https://insightiq.freshdesk.com/support/solutions" class="nav-link" aria-current="page">
+                  <span class="d-md-none icon-solutions" aria-hidden="true"></span> Knowledge base
+                </a>
+              </li>
+            
+            <li class="nav-item no-hover">
+             <a id="" href="https://insightiq.freshdesk.com/support/tickets/new" class="btn fw-secondary-button">Submit a ticket</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-row align-items-center ps-8 fw-nav-dropdown-wrapper">
+            
+
+    <li class="nav-item no-hover fw-login">
+      <a id="" href="https://insightiq.freshdesk.com/support/login" class="nav-link pe-8">Login</a>
+    </li>
+    
+      <li class="nav-item no-hover fw-signup">
+        <a id="" href="https://insightiq.freshdesk.com/support/signup" class="nav-link fw-border-start ps-8">Sign up</a>
+      </li>
+    
+
+
+            <li class="nav-item dropdown no-hover ms-auto">
+             
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    
+  
+</header><main class="fw-main-wrapper" id="fw-main-content">
+    <section class="fw-sticky fw-searchbar-wrapper">
+    <div class="container">
+      <div class="row align-items-center py-8">
+       <div class="col-md-6">
+         <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        
+          
+            
+              <li class="breadcrumb-item"><a href="https://insightiq.freshdesk.com/support/home">Home</a></li>
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              <li class="breadcrumb-item fw-more-items d-lg-none">
+                <a href="https://insightiq.freshdesk.com/support/solutions/articles/89000006378-connect#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-label="Translation missing: en.portal_translations.more_links" aria-haspopup="true" aria-expanded="false">
+                  ...
+                </a>
+                <ul class="dropdown-menu">
+                  
+                    
+                  
+                    
+                      <li><a href="https://insightiq.freshdesk.com/support/solutions">Knowledge base</a></li>
+                    
+                  
+                    
+                      <li><a href="https://insightiq.freshdesk.com/support/solutions/89000007212">Frequently Asked Questions</a></li>
+                    
+                  
+                    
+                      <li><a href="https://insightiq.freshdesk.com/support/solutions/folders/89000017881">Product FAQs</a></li>
+                    
+                  
+                    
+                  
+                </ul>
+              </li>
+              <li class="breadcrumb-item breadcrumb-active-item d-lg-none" aria-current="page">Connect</li>
+            
+          
+        
+    </ol>
+</nav>
+
+        </div>
+        <div class="col-md-4 ms-auto">
+          
+<form action="/support/search/solutions" id="fw-search-form" data-current-tab="solutions">
+  <div class="form-group fw-search  my-0">
+    <div class="input-group">
+      <input type="text" class="form-control" id="searchInput" name="term" value="" placeholder="Find some solutions here..." aria-describedby="srSearchUpdateMessage" autocomplete="off" aria-label="Find some solutions here...">
+      <button class="btn px-20 input-group-text btn-search" id="btnSearch" type="submit" aria-label="Search"><span class="icon-search search-input-icon"></span></button>
+    </div>
+
+    <div class="visually-hidden">
+      <span id="srSearchUpdateMessage" aria-live="polite"></span>
+    </div>
+
+    
+  </div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid px-0 fw-page-title-wrapper">
+    <div class="container">
+      <div class="py-24 py-lg-60 mx-0 fw-search-meta-info g-0">
+        <div class="fw-icon-holder pe-8">
+          <span class="icon-article"></span>
+        </div>
+        <div class="text-start">
+          <h1 class="fw-page-title">Connect</h1>
+          <p>
+  Created by Anoop, Modified on Fri, 5 Jul, 2024 at 10:53 AM by Anoop
+
+
+
+</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid pt-32 pb-60">
+    <div class="container fw-wrapper-shadow px-0 bg-light">
+       <div class="alert alert-with-close notice hide" id="noticeajax"></div> 
+      <div class="row mx-0 g-0">
+        <div class="col-lg-9 fw-content-wrapper mb-16 mb-lg-0">
+          <div class="fw-content fw-content--single-article line-numbers">
+            <div class="xd-video "><div class="xd-label"><span class="xd-dot"></span>Video &middot; 2 min</div><div class="xd-title">Phyllo Connect: why accounts fail to connect</div><p class="xd-sub">Prefer watching? This short video walks through the most common reasons an account fails to connect, and the fix for each.</p><div class="xd-frame"><iframe src="https://scrimba.com/explain/guide0e4cp1lgc" scrolling="no" allow="autoplay; fullscreen" allowfullscreen title="Video: Phyllo Connect: why accounts fail to connect"></iframe></div></div><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#1-account-fails-to-connect" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div dir="ltr" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">1. Account fails to connect</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"><br></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">Check if the provided username and password are correct and all permissions are granted.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#2-the-account-credentials-provided-are-correct-but-still-unable-to-connect-an-account" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">2. The account credentials provided are correct, but still unable to connect an account</span>.</div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">For Instagram, the account that is being connected needs to be a business or creator account and needs to be linked with a <strong>Facebook Business page</strong>. If these conditions are not met, the Facebook screen will show a success message, but the connection will still fail. In other cases or further issues, please get in touch with <a href="mailto:support@getphyllo.com" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: rgb(41, 105, 176); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);"><span style="color: rgb(41, 105, 176);">support@getphyllo.com</span></a>.</span></p><div class="xd-video xd-inline"><div class="xd-label"><span class="xd-dot"></span>Video &middot; 1 min</div><div class="xd-title">Phyllo Connect: popup vs redirect flow</div><p class="xd-sub">Which Connect flow needs cookies, and what to do on mobile in-app browsers.</p><div class="xd-frame"><iframe src="https://scrimba.com/explain/guide0e37o7d8r" scrolling="no" allow="autoplay; fullscreen" allowfullscreen title="Video: Phyllo Connect: popup vs redirect flow"></iframe></div></div><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#3-account-connection-fails-when-cookies-or-browser-storage-is-disabled" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex; cursor: pointer;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">3. Account connection fails when cookies or browser storage is disabled.</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 1;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">There are 2 dependencies here which might interfere with the connection - the Phyllo Connect SDK and the work platform login. The Phyllo Connect SDK requires cookies to be enabled to work properly in redirect flow, the popup flow can work without cookies. But in either case, most platform logins don't work smoothly, or sometimes don't work at all, when cookies or storage is restricted. Hence you should consider cookies to be a mandatory requirement to connect any accounts via Phyllo, and prompt your users to enable them for things to work as they should.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#4-how-do-i-know-which-work-platform-this-account-is-for" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">4. How do I know which work platform this account is for?</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">We always send you the work platform ID along with account ID when we send you the connection details. You can save this info and verify the work platform using the <a href="https://docs.getphyllo.com/docs/api-reference/reference/openapi.v1.yml/paths/~1v1~1work-platforms/get" rel="noreferrer" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-link); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);" target="_blank">retrieve all work platforms API</a>.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#5-how-often-should-i-update-the-list-of-work-platforms" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">5. How often should I update the list of work platforms?</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 16px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">Usually we only add or remove information about work platforms only when we add or remove support for a platform. You can safely cache this information at your end, since the IDs won't change. Optimistically, refreshing this weekly once should be sufficient most of the times but this is merely a recommendation and you may decide to follow some other update mechanism according to your use case.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#6-what-happens-when-any-of-the-permissions-is-denied" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">6. What happens when any of the permissions is denied?</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 16px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">We have worked rigorously to trim our permissions framework to ask for minimal permissions. Still, if you deny any permissions, we analyze the response from the work platforms to see if the permissions are adequate to get the data that we need to serve you. In case they aren't, we show you the relevant message on our SDK.</span></p><div class="xd-video xd-inline"><div class="xd-label"><span class="xd-dot"></span>Video &middot; 1 min</div><div class="xd-title">Fix "PhylloConnect is not defined"</div><p class="xd-sub">Load the Connect SDK in the right order, in under a minute.</p><div class="xd-frame"><iframe src="https://scrimba.com/explain/guide0te75t1uh" scrolling="no" allow="autoplay; fullscreen" allowfullscreen title="Video: Fix "PhylloConnect is not defined""></iframe></div></div><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#7-i-get-an-error-in-the-browser-saying-phylloconnect-is-not-defined" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">7. I get an error in the browser saying "<code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: var(--font-mono); font-size: 16px; color: var(--color-on-code); border-radius: 2px; font-weight: 500; margin-left: 2px; padding: 2px 4px;">PhylloConnect</code> is not defined".</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">Make sure that your script tag that imports the Phyllo Connect JS is added in the <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: var(--font-mono); font-size: 14px; border-radius: 2px; margin-left: 2px; padding: 2px 4px; color: var(--color-on-code);">head</code> seaction, and is loaded properly before you can start using the <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: var(--font-mono); font-size: 14px; border-radius: 2px; margin-left: 2px; padding: 2px 4px; color: var(--color-on-code);">PhylloConnect</code> object. You might want to nest the Phyllo code inside the <code class="sl-font-mono sl-font-medium sl-mx-0.5 sl-px-1 sl-py-0.5 sl-bg-code sl-text-on-code sl-rounded sl-border" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: var(--font-mono); font-size: 14px; border-radius: 2px; margin-left: 2px; padding: 2px 4px; color: var(--color-on-code);">onLoad</code> function or something.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#8-platform-login-screen-doesnt-show-up-on-mobile-web-or-blank-screen-shows-up-after-selecting-a-platform" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">8. Platform login screen doesn't show up on mobile web, OR blank screen shows up after selecting a platform.</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">Most commonly, this happens in the <a href="https://docs.getphyllo.com/docs/api-reference/connect-SDK/web/mobile-in-app-browsing" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-link); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);">"mobile in-app browsing"</a> scenarios, which are detailed on its own page. First thing you could check is if it matches any of these cases. If it does, you might want to follow the instructions on that page to decide what to do next (use mobile SDK, switch the web implementation to a combination of popup and redirect flow, etc.). If it doesn't, please contact us with the below information at <a href="mailto:support@getphyllo.com" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: rgb(41, 105, 176); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);"><span style="color: rgb(41, 105, 176);">support@getphyllo.com</span></a>.</span></p><ul style="font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; list-style-type: none; margin-bottom: 1.5em; padding-left: 0px; line-height: var(--lh-paragraph); caret-color: rgb(38, 38, 38); color: rgb(38, 38, 38); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><li><em dir="ltr"><br></em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em dir="ltr">Device type (mobile, tablet or desktop)</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>Device OS</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>Device OS version</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>For desktop</em><ul style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; list-style-type: none; margin-bottom: 2px; padding-left: 0px; line-height: var(--lh-paragraph);"><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>Browser name</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>Browser version</em></li></ul></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>For mobile</em><ul style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; list-style-type: none; margin-bottom: 2px; padding-left: 0px; line-height: var(--lh-paragraph);"><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>Whether the integration is reusing or redirecting to web implementation, or using our mobile SDK</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>For mobile SDK</em><ul style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; list-style-type: none; margin-bottom: 2px; padding-left: 0px; line-height: var(--lh-paragraph);"><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>Phyllo mobile SDK version</em></li></ul></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>For web implementation reuse</em><ul style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; list-style-type: none; margin-bottom: 2px; padding-left: 0px; line-height: var(--lh-paragraph);"><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em; font-style: italic;"><em>App or browser name</em></li><li style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 4px; padding-left: 2em;"><em>Web SDK flow type (popup or redirect)</em></li></ul></li></ul></li></ul><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#9-phyllo-connect-sdk-works-properly-but-the-platform-doesnt-allow-login-and-shows-a-error-screen--security-message" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">9. Phyllo Connect SDK works properly but the platform doesn't allow login and shows a error screen / security message.</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">There are a few ways this could happen:</span></p><ul><li><em>When the Phyllo Connect SDK is opened in an insecure browser</em></li><li><em>On mobile, Phyllo Connect SDK is opened in a WebView (WebViews have many known security issues and vulnerabilities)</em></li><li><em>Improper implementation of&nbsp;</em><a href="https://docs.getphyllo.com/docs/api-reference/connect-SDK/web/mobile-in-app-browsing" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: rgb(41, 105, 176); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);"><em dir="ltr"><span style="color: rgb(41, 105, 176);">in-app browsing</span></em></a></li></ul><p><em dir="ltr"><br></em></p><p style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 1em; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">Such a behavior is not controlled by Phyllo and is the platform's decision for user safety. We recommend <strong style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;">switching to our native mobile SDKs</strong> in such a scenario if this happens within your app, or <strong style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;">request the user to use a standard, secure, modern browser</strong> in case this happens in an app or browser which is not under your control.</span></p><h3 class="sl-link-heading sl-text-2xl sl-leading-snug sl-font-prose sl-font-semibold sl-text-heading" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin-bottom: 0.8em; font-size: 1.25em; font-weight: 600; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; line-height: 1.375; color: rgb(38, 38, 38); caret-color: rgb(38, 38, 38);"><a class="sl-link sl-link-heading__link sl-inline-flex sl-items-center sl-text-current" href="https://docs.getphyllo.com/#10-i-dont-want-my-users-to-be-able-to-connect-multiple-accounts-what-can-i-do" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: var(--color-text); align-items: center; display: inline-flex;"><div style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000;"><span style="font-size: 16px;">10. I don't want my users to be able to connect multiple accounts. What can I do?</span></div><div class="sl-link-heading__icon sl-text-base sl-ml-4 sl-text-muted" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 12px; margin-left: 16px; color: var(--color-text-muted); opacity: 0;"></div></a></h3><p dir="ltr" style="caret-color: rgb(0, 0, 0); color: var(--color-text-paragraph); font-size: 16px; border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;"><span style="font-size: 14px;">We are working on something towards this. Email us at <a href="mailto:support@getphyllo.com" style="border: 0 solid var(--color-border,currentColor); --tw-shadow: 0 0 #0000; --tw-ring-inset: var(--tw-empty, ); --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(147,197,253,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; color: rgb(41, 105, 176); --color-link: var(--color-text-primary); --color-link-dark: var(--color-primary-dark);"><span style="color: rgb(41, 105, 176);">support@getphyllo.com</span></a> to chat about this.</span></p>
+            
+
+
+          </div>
+          <div class="fw-feedback">
+  <div class="row align-items-center justify-content-center fw-feedback-wrapper" data-id="89000006378">
+    <div class="col-md-5 text-center text-md-end">
+      <h2 class="mb-8 mb-md-0 semi-bold fs-20 fw-feedback-question">Was this article helpful?</h2>
+    </div>
+    <div class="col-md-5 text-center text-lg-start">
+      <button type="button" class="btn fw-btn-feedback fw-no" data-href="/support/solutions/articles/89000006378/thumbs_down" aria-label="No, I need further help">
+
+  <span class="icon-strongly-disagree"></span>No
+  </button>
+      <button type="button" class="btn fw-btn-feedback fw-yes" data-href="/support/solutions/articles/89000006378/thumbs_up" aria-label="Yes, it is helpful">
+
+  <span class="icon-strongly-agree"></span>Yes
+  </button>
+    </div>
+  </div>
+  
+  
+  
+</div>
+        </div>
+
+        <div class="col-lg-3 fw-sidebar-wrapper">
+          <aside class="bg-grey fw-sidebar">
+            <div class="print mb-20">
+             <a href="https://insightiq.freshdesk.com/support/solutions/articles/89000006378-connect#" id="print-article"><span class="icon-print pe-8"></span>Print</a>
+            </div>
+
+            <section class="mb-20">
+              <h2 class="mb-12 fs-20 semi-bold">Articles in this folder -</h2>
+              <ul class="fw-no-bullet">
+                
+                 <li>
+                  <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000006378-connect" class="fw-article">Connect</a>
+                 </li>
+                
+                 <li>
+                  <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000006380-identity" class="fw-article">Identity</a>
+                 </li>
+                
+                 <li>
+                  <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000006381-audience-demographics" class="fw-article">Audience Demographics</a>
+                 </li>
+                
+                 <li>
+                  <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000006382-engagement" class="fw-article">Engagement</a>
+                 </li>
+                
+              </ul>
+            </section>
+
+            
+              <section class="mb-20">
+                <h2 class="mb-12 fs-20 semi-bold">You may like to read -</h2>
+                <ul class="fw-no-bullet">
+                  
+                   <li>
+                    <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000015727-linkage-helpguide" class="fw-article">Linkage Helpguide</a>
+                   </li>
+                  
+                   <li>
+                    <a id="" href="https://insightiq.freshdesk.com/support/solutions/articles/89000016896-creator-search-helpguide-" class="fw-article">Creator Search helpguide!</a>
+                   </li>
+                  
+                </ul>
+              </section>
+            
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+</main><footer class="container-fluid px-0">
+   
+   <section class="fw-credit">
+     <nav aria-label="Secondary" class="fw-laws">
+        
+        
+        
+        
+        
+          <span class="copyright-text">Helpdesk Software by</span>
+        
+        
+          <ul class="list-unstyled mb-0 d-inline-block fw-law-links" role="list">
+            
+              <li class="d-inline-block"><a id="" href="https://www.freshworks.com/freshdesk/?utm_source=portal&amp;utm_medium=reflink&amp;utm_campaign=portal_reflink" class="fw-branding" target="_blank">Freshdesk</a></li>
+            
+            
+              <li class="d-inline-block"><button type="button" class="cookie-link" data-bs-toggle="modal" data-bs-target="#portal-cookie-info">Cookie policy</button>
+
+</li>
+            
+            
+          </ul>
+        
+        
+     </nav>
+   </section>
+ </footer></body></html>
